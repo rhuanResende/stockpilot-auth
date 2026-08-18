@@ -1,3 +1,51 @@
+server:
+  port: ${PORT:8081}
+
 spring:
   application:
-    name: stockpilot_auth
+    name: stockpilot-auth
+    version: "@project.version@"
+
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_ADDRESS:http://localhost:8761/eureka/}
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+app:
+  api:
+    base: /api/v1
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:l3el}0W6Xq{cd+4tk]LzDL0pM_{RXGj)Bd/).;9yblr}
+    expiration: ${JWT_EXPIRATION:1800000}
+
+  rate-limit:
+    login:
+      capacity: 5
+      duration-minutes: 1
+
+    refresh:
+      capacity: 20
+      duration-minutes: 1
+
+    default:
+      capacity: 10
+      duration-minutes: 1
+
+    api:
+      capacity: 50
+      duration-minutes: 1
+
