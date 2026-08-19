@@ -25,17 +25,18 @@ jobs:
 
       - name: Create Maven settings
         run: |
-          mkdir -p ~/.m2/settings.xml << EOF
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml << EOF
           <settings>
             <servers>
               <server>
                 <id>stockpilot-common</id>
-                <username>${GITBUB_ACTOR}</username>
+                <username>${GITHUB_ACTOR}</username>
                 <password>${GITHUB_TOKEN}</password>
               </server>
               <server>
                 <id>stockpilot-security</id>
-                <username>${GITBUB_ACTOR}</username>
+                <username>${GITHUB_ACTOR}</username>
                 <password>${GITHUB_TOKEN}</password>
               </server>
             </servers>
@@ -43,6 +44,10 @@ jobs:
           EOF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Show Maven settings
+        run: |
+          cat ~/.m2/settings.xml | sed 's/<password>.*<\/password>/<password>***<\/password>/'
 
       - name: Get project version
         id: version
