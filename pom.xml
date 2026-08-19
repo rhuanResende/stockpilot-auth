@@ -157,9 +157,15 @@
 
 	<repositories>
 		<repository>
-			<id>github</id>
+			<id>stockpilot-common</id>
 			<url>
-				https://maven.pkg.github.com/rhuanResende/*
+				https://maven.pkg.github.com/rhuanResende/stockpilot-common
+			</url>
+		</repository>
+		<repository>
+			<id>stockpilot-security</id>
+			<url>
+				https://maven.pkg.github.com/rhuanResende/stockpilot-security
 			</url>
 		</repository>
 	</repositories>
