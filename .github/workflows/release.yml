@@ -23,6 +23,24 @@ jobs:
           distribution: temurin
           java-version: 21
 
+      - name: Configure Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          server-id: stockpilot-common
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
+
+      - name: Configure Maven
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          server-id: stockpilot-security
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
+
       - name: Get project version
         id: version
         run: |

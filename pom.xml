@@ -21,8 +21,8 @@
 		<mapstruct.version>1.6.3</mapstruct.version>
 		<jjwt.version>0.12.7</jjwt.version>
 		<springdoc.version>2.8.9</springdoc.version>
-		<stockpilot.common.version>1.0.0</stockpilot.common.version>
-		<stockpilot.security.version>1.0.0</stockpilot.security.version>
+		<stockpilot.common.version>1.0.1</stockpilot.common.version>
+		<stockpilot.security.version>1.0.1</stockpilot.security.version>
 	</properties>
 
 	<dependencies>
