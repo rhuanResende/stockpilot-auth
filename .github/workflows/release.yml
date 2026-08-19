@@ -23,15 +23,6 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Configure Maven
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 21
-          server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
-
       - name: Get project version
         id: version
         run: |

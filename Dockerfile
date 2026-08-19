@@ -10,7 +10,12 @@ RUN mkdir -p /root/.m2 && \
 <settings>
     <servers>
         <server>
-            <id>github</id>
+            <id>stockpilot-common</id>
+            <username>${GITHUB_USERNAME}</username>
+            <password>${GITHUB_TOKEN}</password>
+        </server>
+        <server>
+            <id>stockpilot-security</id>
             <username>${GITHUB_USERNAME}</username>
             <password>${GITHUB_TOKEN}</password>
         </server>
